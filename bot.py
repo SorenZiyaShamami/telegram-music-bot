@@ -8,6 +8,7 @@ AUDD_API_TOKEN= "4343bcb8509693d30c70a106f4099519"
 TELEGRAM_BOT_TOKEN= "7795235602:AAEqchim5sZgbzUv17kGymFBoJqd7cInCE4"
 
 async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("سلام گل آهنگتو بفرست پیدا کنمششش ")
     voice = update.message.voice
     file = await voice.get_file()
     file_path = f"{voice.file_id}.ogg"
@@ -41,5 +42,4 @@ if __name__ == "__main__":
     app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
     app.add_handler(MessageHandler(filters.VOICE, handle_voice))
     print("Bot is running...")
-    await update.message.reply_text("سلام گل آهنگتو بفرست پیدا کنمششش ")
     app.run_polling()
