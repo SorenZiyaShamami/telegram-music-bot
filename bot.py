@@ -41,4 +41,5 @@ if __name__ == "__main__":
     app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
     app.add_handler(MessageHandler(filters.VOICE, handle_voice))
     print("Bot is running...")
+    await update.message.reply_text("سلام گل آهنگتو بفرست پیدا کنمششش ")
     app.run_polling()
